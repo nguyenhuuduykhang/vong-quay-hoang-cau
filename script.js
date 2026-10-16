@@ -291,74 +291,11 @@ function createCycle() {
 }
 
 function choosePrize() {
-    const cycleKey = "hoangCauWheelCycle";
-
-    // Ô vàng
+    // Chỉ chọn 2 ô màu vàng: ô 0 và ô 4
     const goldIndices = [0, 4];
 
-    // Hai ô trắng
-    const whiteIndices = [2, 6];
-
-    // Bốn ô giải khuyến khích
-    const consolationIndices = [1, 5, 8, 10];
-
-    // Bốn ô không trúng thưởng
-    const noPrizeIndices = [3, 7, 9, 11];
-
-    let cycleState;
-
-    try {
-        cycleState = JSON.parse(localStorage.getItem(cycleKey));
-    } catch (error) {
-        cycleState = null;
-    }
-
-    if (
-        !cycleState ||
-        !Number.isInteger(cycleState.count) ||
-        !Number.isInteger(cycleState.goldTurn) ||
-        cycleState.count < 0 ||
-        cycleState.count >= 24 ||
-        cycleState.goldTurn < 1 ||
-        cycleState.goldTurn > 24
-    ) {
-        cycleState = createCycle();
-    }
-
-    let winningIndex;
-
-    // Đến lượt vàng đã chọn: đảm bảo trúng một trong hai ô vàng
-    if (cycleState.count + 1 === cycleState.goldTurn) {
-        winningIndex = randomItem(goldIndices);
-    } else {
-        const random = Math.random() * 100;
-
-        if (random < 20) {
-            // Tổng 20%: mỗi ô trắng 10%
-            winningIndex = randomItem(whiteIndices);
-        } else if (random < 60) {
-            // Tổng 40%: mỗi ô giải khuyến khích 10%
-            winningIndex = randomItem(consolationIndices);
-        } else {
-            // Tổng 40%: mỗi ô không trúng 10%
-            winningIndex = randomItem(noPrizeIndices);
-        }
-    }
-
-    cycleState.count++;
-
-    // Hoàn thành 24 lượt thì bắt đầu chu kỳ mới
-    if (cycleState.count >= 24) {
-        cycleState = createCycle();
-    }
-
-    try {
-        localStorage.setItem(cycleKey, JSON.stringify(cycleState));
-    } catch (error) {
-        console.warn("Không thể lưu chu kỳ quay:", error);
-    }
-
-    return winningIndex;
+    // 100% kết quả rơi vào ô vàng
+    return randomItem(goldIndices);
 }
 // ================================================
 // 7. QUAY VÒNG
