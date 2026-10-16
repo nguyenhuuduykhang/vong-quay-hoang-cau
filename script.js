@@ -390,7 +390,7 @@ function spinWheel() {
     const totalRotation = fullSpins * TAU + extraRotation;
     const endRotation = startRotation + totalRotation;
 
-    const duration = 25000;
+    const duration = 15000;
     const startTime = performance.now();
 
     startSpinMusic();
