@@ -26,20 +26,20 @@ const spinMusic = document.getElementById("spinMusic");
 const TOTAL_SLICES = 12;
 const TAU = Math.PI * 2;
 const SLICE_ANGLE = TAU / TOTAL_SLICES;
-const NO_PRIZE_NAME = "Chúc bạn may mắn lần sau";
+const NO_PRIZE_NAME = "Khăn Giấy";
 
 const prizes = [
     { name: "Bình giữ nhiệt YAMAHA", color: "#FFD45A", textColor: "#12385B" },
-    { name: "Giải khuyến khích", color: "#174A7E", textColor: "#FFFFFF" },
+    { name: "Túi Cói + Khăn giấy", color: "#174A7E", textColor: "#FFFFFF" },
     { name: "Túi vải YAMABLUE", color: "#F4F4F4", textColor: "#12385B" },
     { name: NO_PRIZE_NAME, color: "#70C9F2", textColor: "#12385B" },
     { name: "Áo thun trắng YAMAHA", color: "#FFD45A", textColor: "#12385B" },
-    { name: "Giải khuyến khích", color: "#174A7E", textColor: "#FFFFFF" },
+    { name: "Túi Cói + Khăn giấy", color: "#174A7E", textColor: "#FFFFFF" },
     { name: "Áo thun đen YAMAHA ", color: "#F4F4F4", textColor: "#12385B" },
     { name: NO_PRIZE_NAME, color: "#70C9F2", textColor: "#12385B" },
-    { name: "Giải khuyến khích", color: "#174A7E", textColor: "#FFFFFF" },
+    { name: "Túi Cói + Khăn giấy", color: "#174A7E", textColor: "#FFFFFF" },
     { name: NO_PRIZE_NAME, color: "#70C9F2", textColor: "#12385B" },
-    { name: "Giải khuyến khích", color: "#174A7E", textColor: "#FFFFFF" },
+    { name: "Túi Cói + Khăn giấy", color: "#174A7E", textColor: "#FFFFFF" },
     { name: NO_PRIZE_NAME, color: "#70C9F2", textColor: "#12385B" }
 ];
 
